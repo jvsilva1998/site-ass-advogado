@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advocacia</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">ASS ADVOCACIA</div>
+                <div class="menu-toggle" id="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about">Quem Somos</a></li>
+                    <li><a href="#team">Equipe</a></li>
+                    <li><a href="#office">Escritório</a></li>
+                    <li><a href="#areas">Áreas de Atuação</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="hero">
+                <h1>Jurídico Ágil, Ético e Transparente</h1>
+                <p>Oferecemos soluções jurídicas personalizadas para atender às suas necessidades.</p>
+                <a href="#contact" class="cta-button">Entre em Contato</a>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2>Quem Somos</h2>
+            <p>Ass Advocacia conta com profissionais com mais de 20 anos de
+                experiência nas áreas cível e trabalhista, tanto com atuação no
+                aspecto contencioso como consultivo. O escritório conta hoje com
+                uma completa estrutura, inclusive se situando próximo a
+                importantes locais vinculados à atuação jurídica como o Fórum
+                Trabalhista Ruy Barbosa, o Fórum Regional de Santana, o Fórum
+                Criminal Hely Lopes Meirelles e o Fórum Regional da Lapa.</p>
+        </section>
+
+        <section id="team">
+            <h2>Nossa Equipe</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img
+                        src="https://2961792.fs1.hubspotusercontent-na1.net/hubfs/2961792/advogado1.jpg"
+                        alt="Carlos Faria">
+                    <h3>Carlos Faria</h3>
+                    <p>Direito Civil</p>
+                </div>
+                <div class="team-member">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGympNzzpdcPNiuR0dVUGuniMPJOX4T4TR3A&s"
+                        alt="Miram Leia">
+                    <h3>Miram Leia</h3>
+                    <p>Direito Penal</p>
+                </div>
+                <div class="team-member">
+                    <img
+                        src="https://wp.ebradi.com.br/wp-content/uploads/2019/04/original-28d7126b3960ff17dcaec0ce479fbf45-1080x675.jpg"
+                        alt="Jorhe Lucio">
+                    <h3>Jorge Lucio</h3>
+                    <p>Direito Trabalhista</p>
+                </div>
+                <div class="team-member">
+                    <img
+                        src="https://easyjur.com/blog/wp-content/uploads/2023/06/6-2.jpg"
+                        alt="Nelson Faria">
+                    <h3>Nelson Faria</h3>
+                    <p>Direito Tributarista</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="office">
+            <h2>Nosso Escritório</h2>
+            <p style="text-align: center;">Estamos localizados no coração da cidade, prontos para atendê-lo.</p>
+            <!-- Mapa do Google Maps -->
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.075426745292!2d-46.65342658447528!3d-23.565734367638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1633023226784!5m2!1spt-BR!2sbr"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <section id="areas">
+            <h2>Áreas de Atuação</h2>
+            <div class="areas-grid">
+                <div class="area">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3 class="section-title">Família e Sucessões</h3>
+                    <p class="section-text">Oferecemos suporte jurídico
+                        especializado em questões familiares e sucessórias.</p>
+                    <button class="button">Saiba mais</button>
+                </div>
+                <div class="area">
+                    <i class="fas fa-briefcase"></i>
+                    <h3 class="section-title">Direito Empresarial</h3>
+                    <p class="section-text">Atuamos na assessoria jurídica para
+                        empresas, contratos e compliance.</p>
+                    <button class="button">Saiba mais</button>
+                </div>
+                <div class="area">
+                    <i class="fas fa-home"></i>
+                    <h3 class="section-title">Direito Imobiliário</h3>
+                    <p class="section-text">Oferecemos consultoria em transações
+                        imobiliárias, regularização e disputas.</p>
+                    <button class="button">Saiba mais</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Entre em Contato</h2>
+            <form id="contact-form">
+                <input type="text" id="name" name="name" placeholder="Seu Nome"
+                    required>
+                <input type="email" id="email" name="email"
+                    placeholder="Seu Email" required>
+                <textarea id="message" name="message" placeholder="Sua Mensagem"
+                    required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> (11) 9 6870 4279</p>
+                <p><i class="fas fa-envelope"></i> taprentxdesign@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nome da rua, nº 0 -
+                    Eastro - Cidade/UF</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Advocacia 2025 © Todos os direitos reservados.</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

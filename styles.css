@@ -1,0 +1,527 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Estilo do Header */
+header {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+}
+
+/* Animação do Header */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Estilo para o conteúdo do Header */
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* Estilo do Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #34495e;
+}
+
+/* Estilo do logo */
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Estilo das links de navegação */
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  opacity: 0; /* Começa invisível */
+  transform: translateY(20px); /* Começa deslocado */
+  animation: fadeInLinks 0.8s ease-out forwards; /* Animação de entrada */
+}
+
+nav .nav-links li {
+  margin-left: 20px;
+}
+
+/* Animação de entrada dos links */
+@keyframes fadeInLinks {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Começa deslocado */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Vai para a posição normal */
+  }
+}
+
+/* Estilo dos links */
+nav .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative; /* Para criar o efeito de underline animado */
+  padding-bottom: 3px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre os links */
+nav .nav-links a:hover {
+  color: #3498db; /* Muda a cor ao passar o mouse */
+  transform: scale(1.1); /* Aumenta o tamanho do link ao passar o mouse */
+}
+
+/* Efeito de underline animado */
+nav .nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3498db; /* Cor do underline */
+  transition: width 0.3s ease; /* Transição suave para o underline */
+}
+
+nav .nav-links a:hover::after {
+  width: 100%; /* O underline aparece ao passar o mouse */
+}
+
+/* Estilo do botão "Call to Action" */
+.cta-button {
+  background-color: #ff5722;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Estilo do Toggle do Menu (hamburguer) */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25px;
+  width: 30px;
+}
+
+.menu-toggle .bar {
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Estilo do Hero Section */
+.hero {
+  background: url("https://wp.ebradi.com.br/wp-content/uploads/2021/08/ebradi_ebradi_image_490-1080x675.jpeg")
+    no-repeat center center/cover;
+  padding: 100px 20px;
+  height: 500px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+/* Filtro escuro no Hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Animação de Fade-in para Hero */
+.hero h1,
+.hero p,
+.hero .cta-button {
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo de textos dentro da Hero */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  background: #2980b9;
+}
+
+/* Estilo das seções */
+section {
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo dos títulos */
+h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Grid para Equipe e Áreas */
+.team-grid,
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+}
+
+.team-member,
+.area {
+  text-align: center;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+  height: 100px;
+  border-radius: 5%;
+  margin-bottom: 15px;
+}
+
+.team-member h3,
+.area h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.team-member p,
+.area p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.area i {
+  font-size: 2rem;
+  color: #3498db;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.area:hover i {
+  transform: rotate(360deg);
+}
+
+/* Estilo do botão "Saiba mais" */
+.area .button {
+  padding: 10px 20px;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 15px;
+}
+
+.area .button:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Estilo do mapa */
+.map {
+  margin-top: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  animation: fadeInMap 1.5s ease-out;
+}
+
+@keyframes fadeInMap {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+/* Estilo do rodapé */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #34495e;
+  color: #fff;
+  margin-top: 40px;
+  animation: fadeInFooter 2s ease-out;
+}
+
+@keyframes fadeInFooter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Estilo do formulário de Contato */
+#contact {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contact input,
+#contact textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #f4f4f4;
+  color: #333;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #777;
+}
+
+#contact textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+#contact button {
+  padding: 12px 20px;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#contact button:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .team-member h3,
+  .area h3 {
+    font-size: 1.25rem;
+  }
+
+  .team-member p,
+  .area p {
+    font-size: 0.9rem;
+  }
+
+  #contact p {
+    font-size: 1rem;
+  }
+
+  /* Estilo do menu de navegação */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background: #2c3e50;
+    position: relative;
+    z-index: 1002;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 370px;
+    width: 200px;
+    margin-top: 57px;
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    opacity: 0; /* Menu visível */
+    visibility: visible; /* Torna o menu visível */
+  }
+
+  .nav-links li {
+    margin: 15px 0; /* Espaçamento entre os itens de navegação */
+    width: 100%; /* Largura total para cada item */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .nav-links a {
+    font-size: 1.2rem; /* Tamanho uniforme para os links */
+    padding: 10px 20px; /* Espaçamento interno */
+    color: #fff; /* Cor do texto para garantir visibilidade */
+    display: block; /* Faz o link ocupar toda a largura */
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background-color: #444;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001; /* Garante que o ícone fique acima do menu */
+  }
+
+  .menu-toggle .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
